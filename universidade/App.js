@@ -4,11 +4,11 @@ import {View, Text, Button} from 'react-native'
 import { NavigationContainer } from '@react-navigation/native';
 import {createNativeStackNavigator} from '@react-navigation/native-stack'
 
-import Ex01 from './componentes/Ex01'
-import Ex02 from './componentes/Ex02'
-import Ex03 from './componentes/Ex03'
-import Ex04 from './componentes/Ex04'
-import Ex05 from './componentes/Ex05'
+import Ex01 from './Componentes/ex1'
+import Ex02 from './Componentes/ex2'
+import Ex03 from './Componentes/ex3'
+import Ex04 from './Componentes/ex4'
+import Ex05 from './Componentes/ex5'
 
 const Pilha = createNativeStackNavigator();
 
