@@ -1,5 +1,7 @@
-import React, {useState} from 'react'
+import React, {useEffect, useState} from 'react'
 import {View, Text, FlatList, TextInput, Button, DrawerLayoutAndroidBase} from 'react-native'
+
+import ConsultaAluno from '../API/Aluno/consultaAluno'
 
 export default function App(props){
 
@@ -100,15 +102,9 @@ export default function App(props){
           }
         />
 
-      <FlatList 
-          data ={vetor} 
-          keyExtractor={(item)=>{item.chave}}
-          renderItem={renderiza}
-          ItemSeparatorComponent={separador}
-          ListHeaderComponent={cabecalho}
-          ListFooterComponent={rodape}
-      />
+      
     </View>
+          <ConsultaAluno/>
     </View>
   );
 }
