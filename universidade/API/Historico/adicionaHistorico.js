@@ -26,7 +26,7 @@ export default function AdicionaHistorico(props) {
   return(
     <Button 
           title="Cadastrar"
-          color='#bd0000'
+          color='#368986'
           onPress={
             ()=>{
               adicionandoDados()

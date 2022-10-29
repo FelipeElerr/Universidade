@@ -12,25 +12,25 @@ export default function App(props) {
 
   return (
     <>
-      <View style={{ flex: 1 }}>
+      <View style={{ flex: 1, backgroundColor:'#005c81' }}>
         <TextInput
           value={nome}
           placeholder="Digite seu nome!"
-          style={{ borderWidth: 2, borderColor: "red" }}
+          style={{ borderWidth: 1, borderColor: "black" }}
           onChangeText={(text) => { setNome(text) }}
         />
 
         <TextInput
           value={endereco}
           placeholder="Digite seu endereço!"
-          style={{ borderWidth: 2, borderColor: "red" }}
+          style={{ borderWidth: 1, borderColor: "black" }}
           onChangeText={(text) => { setEndereco(text) }}
         />
 
         <TextInput
           value={cidade}
           placeholder="Digite sua cidade!"
-          style={{ borderWidth: 2, borderColor: "red" }}
+          style={{ borderWidth: 1, borderColor: "black" }}
           onChangeText={(text) => { setCidade(text) }}
         />
 

@@ -24,7 +24,7 @@ export default function AdicionaDisciplina(props) {
   return(
     <Button 
           title="Cadastrar"
-          color='#bd0000'
+          color='#368986'
           onPress={
             ()=>{
               adicionandoDados()

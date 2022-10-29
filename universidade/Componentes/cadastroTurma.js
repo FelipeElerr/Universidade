@@ -13,32 +13,32 @@ export default function App(props) {
 
   return (
     <>
-      <View style={{ flex: 1 }}>
+      <View style={{ flex: 1, backgroundColor:'#005c81' }}>
         <TextInput
           value={cod_disc}
           placeholder="Digite o código da disciplina!"
-          style={{ borderWidth: 2, borderColor: "red" }}
+          style={{ borderWidth: 1, borderColor: "black" }}
           onChangeText={(text) => { setDisc(text) }}
         />
 
         <TextInput
           value={cod_prof}
           placeholder="Digite o código do professor!"
-          style={{ borderWidth: 2, borderColor: "red" }}
+          style={{ borderWidth: 1, borderColor: "black" }}
           onChangeText={(text) => { setProf(text) }}
         />
 
         <TextInput
           value={ano}
           placeholder="Digite o ano!"
-          style={{ borderWidth: 2, borderColor: "red" }}
+          style={{ borderWidth: 1, borderColor: "black" }}
           onChangeText={(text) => { setAno(text) }}
         />
         
         <TextInput
           value={horario}
           placeholder="Digite o horário!"
-          style={{ borderWidth: 2, borderColor: "red" }}
+          style={{ borderWidth: 1, borderColor: "black" }}
           onChangeText={(text) => { setHorario(text) }}
         />
 

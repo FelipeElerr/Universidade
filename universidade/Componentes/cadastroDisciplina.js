@@ -11,18 +11,18 @@ export default function App(props) {
 
   return (
     <>
-      <View style={{ flex: 1 }}>
+      <View style={{ flex: 1, backgroundColor:'#005c81' }}>
         <TextInput
           value={nome}
           placeholder="Digite o nome da disciplina!"
-          style={{ borderWidth: 2, borderColor: "red" }}
+          style={{ borderWidth: 1, borderColor: "black" }}
           onChangeText={(text) => { setNome(text) }}
         />
 
         <TextInput
           value={carga}
           placeholder="Digite a carga horária"
-          style={{ borderWidth: 2, borderColor: "red" }}
+          style={{ borderWidth: 1, borderColor: "black" }}
           onChangeText={(text) => { setCarga(text) }}
         />
 
