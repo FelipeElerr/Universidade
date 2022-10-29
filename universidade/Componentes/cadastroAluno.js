@@ -14,36 +14,20 @@ export default function App(props){
   // cria um vetor vazio
   const [vetor, setVetor] = useState([]);
 
-  const renderiza = ({item})=>{
-    return(
-      <View style={{flexDirection:'row', backgroundColor:'red'}}>
-        <Text style={{flex:1, color:'white'}}> {item.id} </Text> 
-        <Text style={{flex:1, color:'white'}}> {item.nome} </Text>
-        <Text style={{flex:1, color:'white', justifyContent:'flex-end'}}> {item.cidade} </Text>
-      </View>
-    );
-  }
+  // const cabecalho = ()=>{
+  //   return( 
+  //     <View style={{height:20, backgroundColor:'black', width:'100%', marginTop:20}}>
+  //           <Text style={{color:'white', textAlign:'center'}}>Dados que foram cadastrados</Text>
+  //       </View>
+  //    );
+  // }
 
-  const separador = ()=>{
-    return( 
-        <View style={{height:3, backgroundColor:'black', width:'100%'}}></View>
-     );
-  }
-
-  const cabecalho = ()=>{
-    return( 
-      <View style={{height:20, backgroundColor:'black', width:'100%', marginTop:20}}>
-            <Text style={{color:'white', textAlign:'center'}}>Dados que foram cadastrados</Text>
-        </View>
-     );
-  }
-
-  const rodape = ()=>{
-    return( 
-        <View style={{height:10, backgroundColor:'black', width:'100%'}}>
-        </View>
-     );
-  }
+  // const rodape = ()=>{
+  //   return( 
+  //       <View style={{height:10, backgroundColor:'black', width:'100%'}}>
+  //       </View>
+  //    );
+  // }
 
   return(
     <View>

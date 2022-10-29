@@ -12,7 +12,7 @@ export default function ConsultaAluno() {
   const renderiza = ({item})=>{
     return(
       <View style={{flexDirection:'row'}}>
-        <Text style={{flex:2, color:'black'}}> {item.nome} </Text> 
+        <Text style={{flex:1, color:'black'}}> {item.nome} </Text>
         <Text style={{flex:1, color:'black'}}> {item.cidade} </Text>
         <Text style={{flex:1, color:'black', justifyContent:'flex-end'}}> {item.endereco} </Text>
       </View>
@@ -38,10 +38,7 @@ export default function ConsultaAluno() {
       const snapshot = await getDocs(colecaoRef)
 
       for(let i=0;i<snapshot.docs.length;i++){
-        console.log('Dados[', i, ']: ', snapshot.docs[i].data())
-
-        const dado = {id:snapshot.docs[i].id, item:snapshot.docs[i].data().Item, qtd: snapshot.docs[i].data().Quantidade}
-
+        const dado = {id:snapshot.docs[i].id, nome:snapshot.docs[i].data().nome, cidade: snapshot.docs[i].data().cidade, endereco: snapshot.docs[i].data().endereco}
         vetor.push( dado )
       }
 
@@ -55,7 +52,7 @@ export default function ConsultaAluno() {
     }
 
   }
-  console.log('vetor: ', vetor);
+
   return(
     <View>
       <FlatList 
