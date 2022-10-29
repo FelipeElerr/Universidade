@@ -8,14 +8,14 @@ import {getFirestore, collection, getDocs, setDoc, doc, deleteDoc, getDoc, addDo
 
 import db from '../../config'
 
-export default function AdicionaHistorico(props) {
-  const colecaoRef = collection(db,'Histórico');
+export default function AdicionaAluno(props) {
+  const colecaoRef = collection(db,'Turma');
   const adicionandoDados = ()=>{
-    addDoc(collection(db, "Histórico"), {
-        matricula: props.matricula,
-        cod_turma: props.cod_turma,
-        frequencia:props.frequencia,
-        nota:props.nota
+    addDoc(collection(db, "Turma"), {
+        cod_disc: props.cod_disc,
+        cod_prof: props.cod_prof,
+        ano:props.ano,
+        horario:props.horario
       }).then(()=>{
             console.log('Dado submetido')
         })
