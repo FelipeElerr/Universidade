@@ -1,94 +1,57 @@
-import React, {useEffect, useState} from 'react'
-import {View, Text, FlatList, TextInput, Button, DrawerLayoutAndroidBase} from 'react-native'
+import React, { useEffect, useState } from 'react'
+import { View, Text, FlatList, TextInput, Button, DrawerLayoutAndroidBase, TurboModuleRegistry } from 'react-native'
 
 import ConsultaAluno from '../API/Aluno/consultaAluno'
+import AdicionaAluno from '../API/Aluno/adicionaAluno'
 
-export default function App(props){
+export default function App(props) {
 
   const [nome, setNome] = useState("");
   const [cidade, setCidade] = useState("");
   const [endereco, setEndereco] = useState("");
-  const [telefone, setTelefone] = useState("");
-  const [email, setEmail] = useState("");
+  const [url, setUrl] = useState("");
 
-  // cria um vetor vazio
-  const [vetor, setVetor] = useState([]);
-
-  // const cabecalho = ()=>{
-  //   return( 
-  //     <View style={{height:20, backgroundColor:'black', width:'100%', marginTop:20}}>
-  //           <Text style={{color:'white', textAlign:'center'}}>Dados que foram cadastrados</Text>
-  //       </View>
-  //    );
-  // }
-
-  // const rodape = ()=>{
-  //   return( 
-  //       <View style={{height:10, backgroundColor:'black', width:'100%'}}>
-  //       </View>
-  //    );
-  // }
-
-  return(
-    <View>
-
-      <View style={{flex:1}}>
+  return (
+    <>
+      <View style={{ flex: 1 }}>
         <TextInput
-         value={nome}
-         placeholder="Digite seu nome!" 
-         style={{borderWidth:2, borderColor:"red"}}
-         onChangeText={(text) => {setNome(text)}}
-        />
-
-      <TextInput
-         value={endereco}
-         placeholder="Digite seu endereço!" 
-         style={{borderWidth:2, borderColor:"red"}}
-         onChangeText={(text) => {setEndereco(text)}}
+          value={nome}
+          placeholder="Digite seu nome!"
+          style={{ borderWidth: 2, borderColor: "red" }}
+          onChangeText={(text) => { setNome(text) }}
         />
 
         <TextInput
-         value={email}
-         placeholder="Digite seu email!" 
-         style={{borderWidth:2, borderColor:"red"}}
-         onChangeText={(text) => {setEmail(text)}}
+          value={endereco}
+          placeholder="Digite seu endereço!"
+          style={{ borderWidth: 2, borderColor: "red" }}
+          onChangeText={(text) => { setEndereco(text) }}
         />
 
         <TextInput
-         value={telefone}
-         placeholder="Digite seu telefone!" 
-         style={{borderWidth:2, borderColor:"red", marginBottom:20}}
-         onChangeText={(text) => {setTelefone(text)}}
+          value={cidade}
+          placeholder="Digite sua cidade!"
+          style={{ borderWidth: 2, borderColor: "red" }}
+          onChangeText={(text) => { setCidade(text) }}
         />
 
-        <Button 
-          title="Cadastrar"
-          color='#bd0000'
-          onPress={
-            ()=>{
-              const auxVex = {id:vetor.length+1,nome: nome, cidade: cidade}
-
-              // adiciona os dados no vetor
-              vetor.push(auxVex)
-
-              // cria uma cópia do vetor para que o flatlista entenda que houve uma alteracao no vetor inicial
-              //const copiaVetor = vetor.slice()
-
-              // outra maneira de cria uma cópia
-              const copiaVetor = [...vetor]
-
-              // salva a copia novamente dentro da variavel vetor
-              setVetor(copiaVetor);
-
-              //setVetor([...vetor,auxVex]);
-              console.log(vetor)
-            }
-          }
+        <TextInput
+          value={url}
+          placeholder="Adicione o endereço de uma imagem!"
+          style={{ borderWidth: 2, borderColor: "red" }}
+          onChangeText={(text) => { setUrl(text) }}
         />
 
-      
-    </View>
-          <ConsultaAluno/>
-    </View>
+        <AdicionaAluno nome={nome} cidade={cidade} endereco={endereco} url={url}/>
+        <View>
+          <Text style={{fontSize:20, marginBottom:20}}>
+            Alunos Cadastrados:
+          </Text>
+        </View>
+        <ConsultaAluno />
+      </View>
+
+    </>
+
   );
 }
