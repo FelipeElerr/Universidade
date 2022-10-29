@@ -52,6 +52,13 @@ export default function App(props) {
             onPress={() => props.navigation.navigate('DeletarHistorico')}
           />
         </View>
+        <View>
+          <Button
+            color='#e79a32'
+            title="Atualizar Histórico"
+            onPress={() => props.navigation.navigate('AtualizarHistorico')}
+          />
+        </View>
 
         <View>
           <Text style={{ fontSize: 20, marginBottom: 20 }}>
