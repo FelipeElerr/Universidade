@@ -4,15 +4,18 @@ import { collection, getDocs} from 'firebase/firestore'
 
 import db from '../../config'
 
-export default function ConsultaDisciplina() {
-  const colecaoRef = collection(db,'Disciplina');
+export default function ConsultaHistorico() {
+  const colecaoRef = collection(db,'Historico');
 
   const [vetor, setVetor] = useState([]);
 
   const renderiza = ({item})=>{
     return(
       <View style={{flexDirection:'row'}}>
-        <Text style={{flex:1, color:'black', padding:3}}> {item.nome_disc} </Text>
+        <Text style={{flex:1, color:'black', padding:3}}> {item.matricula} </Text>
+        {/* <Text style={{flex:1, color:'black', padding:3}}> {item.cod_turma} </Text>
+        <Text style={{flex:1, color:'black', padding:3}}> {item.frequencia} </Text>
+        <Text style={{flex:1, color:'black', padding:3}}> {item.nota} </Text> */}
       </View>
     );
   }
@@ -36,7 +39,7 @@ export default function ConsultaDisciplina() {
       const snapshot = await getDocs(colecaoRef)
 
       for(let i=0;i<snapshot.docs.length;i++){
-        const dado = {id:snapshot.docs[i].id, nome_disc:snapshot.docs[i].data().nome_disc}
+        const dado = {id:snapshot.docs[i].id, matricula:snapshot.docs[i].data().matricula}
         vetor.push( dado )
       }
 

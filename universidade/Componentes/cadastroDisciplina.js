@@ -29,7 +29,7 @@ export default function App(props) {
         <AdicionaDisciplina nome_disc={nome} carga_hor={carga}/>
         <View>
           <Text style={{fontSize:20, marginBottom:20}}>
-            Alunos Cadastrados:
+            Disciplinas Cadastradas:
           </Text>
         </View>
         <ConsultaDisciplina />
