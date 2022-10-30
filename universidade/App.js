@@ -11,6 +11,7 @@ import CadastroTurma from './Componentes/cadastroTurma'
 import CadastroHistorico from './Componentes/Historico/cadastroHistorico'
 import DeletarHistorico from './Componentes/Historico/deletarHistorico'
 import AtualizarHistorico from './Componentes/Historico/atualizarHistorico';
+import Home from './Componentes/Home/home';
 
 const Pilha = createNativeStackNavigator();
 
@@ -67,7 +68,7 @@ export default function App() {
 
         <NavigationContainer independent={true}>
             <Pilha.Navigator>
-                <Pilha.Screen name='TelasCadastro' component={TelasCadastro} options={{ title: 'Opções de Cadastro' }} />
+                <Pilha.Screen name='Home' component={Home} options={{ title: 'Home' }} />
                 <Pilha.Screen name='CadastroAluno' component={CadastroAluno} />
                 <Pilha.Screen name='CadastroDisciplina' component={CadastroDisciplina} />
                 <Pilha.Screen name='CadastroProfessor' component={CadastroProfessor} />
