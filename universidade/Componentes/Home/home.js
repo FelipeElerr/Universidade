@@ -18,8 +18,6 @@ function Home() {
         try {
             const resposta = await fetch("https://zoo-animal-api.herokuapp.com/animals/rand/10");
             const dados = await resposta.json()
-            console.log(dados);
-
             setDados(dados);
         } catch (error) {
             // vamos guardar um texto dentro de uma variável para mostrar no app
@@ -36,6 +34,12 @@ function Home() {
     
     return (
         <View>
+            <View>
+                <Text style={{fontSize:30, textAlign: 'center'}}>
+                    Integrantes:
+                </Text>
+            </View>
+
             <View style={{ flex: 1, flexDirection:'column', alignItems: 'center' }}>
                 <Image
                     style={{ width: tamanho, height: tamanho, resizeMode: 'contain' }}
