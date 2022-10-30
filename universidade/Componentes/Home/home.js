@@ -25,37 +25,49 @@ function Home() {
             console.log(erro);
         }
     }
-    dados.forEach(dado=>{
-        imagens.push( dado.image_link )
+    dados.forEach(dado => {
+        imagens.push(dado.image_link)
     })
-    
+
     const numColunas = 4;
     const tamanho = Dimensions.get('window').width / numColunas
-    
+
     return (
         <View>
             <View>
-                <Text style={{fontSize:30, textAlign: 'center'}}>
+                <Text style={{ fontSize: 30, textAlign: 'center' }}>
                     Integrantes:
                 </Text>
             </View>
 
-            <View style={{ flex: 1, flexDirection:'column', alignItems: 'center' }}>
-                <Image
-                    style={{ width: tamanho, height: tamanho, resizeMode: 'contain' }}
-                    source={{ uri: imagens[0] }}
-                />
-                <Text style={{ textAlign: 'center' }}> Rafael Henrique Lavagnini- 200767 </Text>
-                <Image
-                    style={{ width: tamanho, height: tamanho, resizeMode: 'contain' }}
-                    source={{ uri: imagens[1] }}
-                />
-                <Text style={{ textAlign: 'center' }}> Felipe Eler de Oliveira Machado - 200738</Text>
-                <Image
-                    style={{ width: tamanho, height: tamanho, resizeMode: 'contain' }}
-                    source={{ uri: imagens[2] }}
-                />
-                <Text style={{ textAlign: 'center' }}> Matheus Carvalho Patriarca de Paschoa - 200347</Text>
+            <View style={{ flex: 1, flexDirection: 'row', justifyContent: 'center' }}>
+
+                <View style={{ flex: 1, flexDirection: 'column', justifyContent: 'center' }}>
+                    <Image
+                        style={{ width: tamanho, height: tamanho, resizeMode: 'contain' }}
+                        source={{ uri: imagens[0] }}
+                    />
+                    <Text> Rafael Henrique Lavagnini- 200767 </Text>
+                </View>
+
+                <View style={{ flex: 1, flexDirection: 'column', justifyContent: 'center' }}>
+                    <Image
+                        style={{ width: tamanho, height: tamanho, resizeMode: 'contain' }}
+                        source={{ uri: imagens[1] }}
+                    />
+                    <Text> Felipe Eler de Oliveira Machado - 200738</Text>
+                </View>
+
+                <View style={{ flex: 1, flexDirection: 'column', justifyContent: 'center' }}>
+                    <Image
+                        style={{ width: tamanho, height: tamanho, resizeMode: 'contain' }}
+                        source={{ uri: imagens[2] }}
+                    />
+                    <Text> Matheus Carvalho Patriarca de Paschoa - 200347</Text>
+                </View>
+
+
+
             </View>
         </View>
     );

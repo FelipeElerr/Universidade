@@ -4,7 +4,7 @@ import { collection, getDocs} from 'firebase/firestore'
 
 import db from '../../config'
 
-export default function ConsultaAluno() {
+export default function ConsultaTurma() {
   const colecaoRef = collection(db,'Turma');
 
   const [vetor, setVetor] = useState([]);
