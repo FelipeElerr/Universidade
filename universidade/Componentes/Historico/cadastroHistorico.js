@@ -1,12 +1,11 @@
 import React, { useEffect, useState } from 'react'
 import { View, Text, FlatList, TextInput, Button, DrawerLayoutAndroidBase, TurboModuleRegistry } from 'react-native'
-import { NavigationContainer } from '@react-navigation/native';
-import { createNativeStackNavigator } from '@react-navigation/native-stack'
+
 
 import ConsultaHistorico from '../../API/Historico/consultaHistorico'
 import AdicionaHistorico from '../../API/Historico/adicionaHistorico'
 
-export default function App(props) {
+export default function CadastroHistorico(props) {
 
   const [matricula, setMatricula] = useState("");
   const [cod_turma, setTurma] = useState("");

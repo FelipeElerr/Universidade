@@ -1,17 +1,22 @@
 import React, { useEffect, useState } from 'react'
-import { View, Text, FlatList } from 'react-native'
+import { View, Text, FlatList, Button } from 'react-native'
 import { collection, getDocs } from 'firebase/firestore'
+
 
 import db from '../../config'
 
-export default function VizualizaTurmaBanco() {
+export default function VizualizaTurmaBanco(props) {
   const colecaoRef = collection(db, 'Turma');
 
   const [vetor, setVetor] = useState([]);
 
-  const renderiza = ({ item }) => {
+  const adicionandoDados = () => {
+
+  }
+
+  const renderiza = ( { item }) => {
     return (
-      <View style={{ flexDirection: 'row' , justifyContent:'space-between'}}>
+      <View style={{ flexDirection: 'row', justifyContent: 'space-between' }}>
         <View style={{ flexDirection: 'column' }}>
           <Text style={{ flex: 1, color: 'black', padding: 3 }}> {item.id} </Text>
         </View>
@@ -23,6 +28,12 @@ export default function VizualizaTurmaBanco() {
         <View style={{ flexDirection: 'column' }}>
           <Text style={{ flex: 1, color: 'black', padding: 3 }}> {item.cod_prof} </Text>
         </View>
+
+        <Button
+          color='#005c81'
+          title="Cadastro de Aluno"
+          onPress={() => props.navigation.navigate('VizualizaAlunos')}
+        />
       </View>
     );
   }
@@ -74,3 +85,6 @@ export default function VizualizaTurmaBanco() {
     </View>
   );
 }
+
+
+
