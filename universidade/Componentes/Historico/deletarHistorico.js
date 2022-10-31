@@ -3,6 +3,7 @@ import { View, Text, FlatList, TextInput, Button, DrawerLayoutAndroidBase, Turbo
 import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack'
 import ApagarHistoricoBanco from '../../API/Historico/apagarHistoricoBanco';
+import PlanoDeFundo from '../planoDeFundo';
 
 export default function DeletarHistorico() {
 
@@ -10,6 +11,7 @@ export default function DeletarHistorico() {
 
     return (
         <>
+        <PlanoDeFundo>
         <View>
             <TextInput
                 value={cod_historico}
@@ -19,6 +21,7 @@ export default function DeletarHistorico() {
             />
         </View>
         <ApagarHistoricoBanco cod_historico={cod_historico}  />
+        </PlanoDeFundo>
         </>
         
     )

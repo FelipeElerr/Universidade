@@ -5,6 +5,7 @@ import { createNativeStackNavigator } from '@react-navigation/native-stack'
 
 import ConsultaHistorico from '../../API/Historico/consultaHistorico'
 import AdicionaHistorico from '../../API/Historico/adicionaHistorico'
+import PlanoDeFundo from '../planoDeFundo';
 
 export default function App(props) {
 
@@ -15,7 +16,7 @@ export default function App(props) {
 
   return (
     <>
-      <View style={{ flex: 1, backgroundColor:'#005c81' }}>
+      <PlanoDeFundo>
         <TextInput
           value={matricula}
           placeholder="Digite a matícula!"
@@ -66,7 +67,7 @@ export default function App(props) {
           </Text>
         </View>
         <ConsultaHistorico />
-      </View>
+      </PlanoDeFundo>
 
     </>
 
