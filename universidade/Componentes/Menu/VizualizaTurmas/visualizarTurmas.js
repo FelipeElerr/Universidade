@@ -1,8 +1,8 @@
 import React from 'react'
-import { Text, View } from 'react-native'
-import VizualizaTurmaBanco from '../../API/VisualizaTurma/visualizaTurmaBanco'
+import { Text, View, Button } from 'react-native'
+import VizualizaTurmaBanco from '../../../API/VisualizaTurma/visualizaTurmaBanco'
 
-export default function VisualizarTurmas(){
+export default function VisualizarTurmas(props){
     return(
         <View style={{flex:1, flexDirection:'column', justifyContent:'flex-start'}}>
             <View style={{flexDirection:'row', justifyContent:'space-between'}}>
@@ -15,8 +15,12 @@ export default function VisualizarTurmas(){
                 <Text>
                     Código do professor
                 </Text>
+                <Button
+                    color='white'
+                    title="Cadastro de Aluno"
+                />
             </View>
-            <VizualizaTurmaBanco/>
+            <VizualizaTurmaBanco navigation = {props.navigation}/>
         </View>
     )
 }

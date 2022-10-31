@@ -11,7 +11,8 @@ import CadastroTurma from '../cadastroTurma'
 import CadastroHistorico from '../Historico/cadastroHistorico'
 import DeletarHistorico from '../Historico/deletarHistorico'
 import AtualizarHistorico from '../Historico/atualizarHistorico'
-import VisualizarTurmas from './visualizarTurmas';
+import VisualizarTurmas from './VizualizaTurmas/visualizarTurmas';
+import VizualizaAlunos from './VizualizaTurmas/vizualizaAlunos';
 
 const Pilha = createNativeStackNavigator();
 
@@ -83,6 +84,7 @@ export default function Menu(){
                     <Pilha.Screen name='DeletarHistorico' component={DeletarHistorico} />
                     <Pilha.Screen name='AtualizarHistorico' component={AtualizarHistorico} />
                     <Pilha.Screen name='VisualizarTurmas' component={VisualizarTurmas} />
+                    <Pilha.Screen name='VizualizaAlunos' component={VizualizaAlunos} />
                 </Pilha.Navigator>
             </NavigationContainer>
 
