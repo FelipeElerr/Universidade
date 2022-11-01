@@ -11,8 +11,9 @@ import CadastroTurma from '../cadastroTurma'
 import CadastroHistorico from '../Historico/cadastroHistorico'
 import DeletarHistorico from '../Historico/deletarHistorico'
 import AtualizarHistorico from '../Historico/atualizarHistorico'
-import VisualizarTurmas from './VizualizaTurmas/visualizarTurmas';
-import VizualizaAlunos from './VizualizaTurmas/vizualizaAlunos';
+import VisualizarTurmas from './VizualizaTurmas/visualizarTurmas'
+import VizualizaAlunos from './VizualizaTurmas/vizualizaAlunos'
+import VizualizaHistoricoBanco from '../../API/VisualizaTurma/visualizaHistoricoBanco';
 
 const Pilha = createNativeStackNavigator();
 
@@ -85,6 +86,7 @@ export default function Menu(){
                     <Pilha.Screen name='AtualizarHistorico' component={AtualizarHistorico} />
                     <Pilha.Screen name='VisualizarTurmas' component={VisualizarTurmas} />
                     <Pilha.Screen name='VizualizaAlunos' component={VizualizaAlunos} />
+                    <Pilha.Screen name='VizualizaHistoricoBanco' component={VizualizaHistoricoBanco} />
                 </Pilha.Navigator>
             </NavigationContainer>
 

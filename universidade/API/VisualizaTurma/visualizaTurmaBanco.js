@@ -36,6 +36,7 @@ export default function VizualizaTurmaBanco(props) {
           onPress={() =>
             props.navigation.navigate('VizualizaAlunos', {
               paramKey: item.id,
+              navigation: props.navigation
             })
           }
         />

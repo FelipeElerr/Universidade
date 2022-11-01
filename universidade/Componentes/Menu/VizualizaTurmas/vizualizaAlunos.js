@@ -5,7 +5,7 @@ import VisualizaAlunosBanco from '../../../API/VisualizaTurma/visualizaAlunosBan
 export default function VizualizaAlunos({route}){
     return(
         <View style={{marginLeft:'300', marginRight:'300'}}>
-            <VisualizaAlunosBanco disciplina={route.params.paramKey}/>
+            <VisualizaAlunosBanco disciplina={route.params.paramKey} navigation={route.params.navigation}/>
         </View>
     )
 }

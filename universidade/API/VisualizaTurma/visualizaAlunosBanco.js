@@ -1,10 +1,10 @@
 import React, { useEffect, useState } from 'react'
-import { View, Text, FlatList, Image, Dimensions } from 'react-native'
+import { View, Text, FlatList, Image, Dimensions, Button } from 'react-native'
 import { collection, getDocs } from 'firebase/firestore'
 
 import db from '../../config'
 
-export default function ConsultaHistorico(props) {
+export default function VisualizaAlunosBanco(props) {
     const colecaoHistorico = collection(db, 'Histórico');
     const colecaoAluno = collection(db, 'Aluno');
 
@@ -15,15 +15,22 @@ export default function ConsultaHistorico(props) {
 
     const renderiza = ({ item }) => {
         const tamanho = Dimensions.get('window').height / matriculas.length
-        console.log('Tamanho: ', tamanho)
 
         return (
-            <View style={{ flex: 1, flexDirection: 'row', justifyContent: 'space-between', marginLeft:'500' }}>
+            <View style={{ flex: 1, flexDirection: 'row', justifyContent: 'space-between', marginLeft: '500' }}>
                 <Image
                     style={{ width: 100, height: 100, resizeMode: 'contain' }}
                     source={{ uri: item.foto }}
                 />
-                <Text > {item.nome}</Text>
+                <Button
+                    color='#005c81'
+                    title={item.nome}
+                    onPress={() =>
+                        props.navigation.navigate('VizualizaHistoricoBanco', {
+                            matricula: item.id,
+                        })
+                    }
+                />
             </View>
         );
     }
@@ -57,19 +64,15 @@ export default function ConsultaHistorico(props) {
 
             setVetorHistorico(vetor2)
 
-            console.log('Vetor Historico', vetorHistorico);
 
             for (let i = 0; i < vetorHistorico.length; i++) {
                 if (vetorHistorico[i].cod_turma == props.disciplina) {
-                    console.log('AchouTurma')
                     matriculas.push(vetorHistorico[i].matricula)
                 }
             }
 
             const vetor3 = matriculas.slice()
             setMatriculas(vetor3)
-
-            console.log('Matriculas', matriculas)
 
         } catch (erro) {
             console.log(erro.message)
@@ -94,7 +97,6 @@ export default function ConsultaHistorico(props) {
             matriculas.forEach(matricula => {
                 for (let i = 0; i < vetorAluno.length; i++) {
                     if (vetorAluno[i].id == matricula) {
-                        console.log('entrouMatricula')
                         dadosAlunosTurma.push({ id: vetorAluno[i].id, nome: vetorAluno[i].nome, cidade: vetorAluno[i].cidade, endereco: vetorAluno[i].endereco, foto: vetorAluno[i].foto })
                     }
                 }
@@ -102,9 +104,6 @@ export default function ConsultaHistorico(props) {
 
             const vetor4 = dadosAlunosTurma.slice()
             setDadosAlunosTurma(vetor4)
-
-            console.log('Dados aluno turma:', dadosAlunosTurma);
-
 
         } catch (erro) {
             console.log(erro.message)
@@ -115,7 +114,7 @@ export default function ConsultaHistorico(props) {
 
 
     return (
-        <View style={{flex:1}}>
+        <View style={{ flex: 1 }}>
             <FlatList
                 data={dadosAlunosTurma}
                 keyExtractor={item => item.id}
