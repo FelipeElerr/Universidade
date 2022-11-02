@@ -9,12 +9,13 @@ export default function VizualizaTurmaBanco(props) {
   const colecaoRef = collection(db, 'Turma');
 
   const [vetor, setVetor] = useState([]);
+  
 
   const adicionandoDados = () => {
 
   }
 
-  const renderiza = ( { item }) => {
+  const renderiza = ({ item }) => {
     return (
       <View style={{ flexDirection: 'row', justifyContent: 'space-between' }}>
         <View style={{ flexDirection: 'column' }}>
@@ -31,8 +32,13 @@ export default function VizualizaTurmaBanco(props) {
 
         <Button
           color='#005c81'
-          title="Cadastro de Aluno"
-          onPress={() => props.navigation.navigate('VizualizaAlunos')}
+          title="Ver alunos"
+          onPress={() =>
+            props.navigation.navigate('VizualizaAlunos', {
+              paramKey: item.id,
+              navigation: props.navigation
+            })
+          }
         />
       </View>
     );
