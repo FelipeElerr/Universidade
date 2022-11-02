@@ -15,8 +15,6 @@ import VisualizarTurmas from './VizualizaTurmas/visualizarTurmas'
 import VizualizaAlunos from './VizualizaTurmas/vizualizaAlunos'
 import VizualizaHistoricoBanco from '../../API/VisualizaTurma/visualizaHistoricoBanco';
 
-import { BackgroundProvider } from '../Configuracoes/configuracoes';
-import PlanoDeFundo from '../Configuracoes/planoDeFundo';
 
 const Pilha = createNativeStackNavigator();
 
@@ -77,8 +75,7 @@ function OpcoesMenu(props) {
 
 export default function Menu() {
     return (
-        <BackgroundProvider>
-            <PlanoDeFundo>
+       
                 <NavigationContainer independent={true}>
                     <Pilha.Navigator>
                         <Pilha.Screen name='OpcoesMenu' component={OpcoesMenu} />
@@ -94,7 +91,6 @@ export default function Menu() {
                         <Pilha.Screen name='VizualizaHistoricoBanco' component={VizualizaHistoricoBanco} />
                     </Pilha.Navigator>
                 </NavigationContainer>
-            </PlanoDeFundo>
-        </BackgroundProvider>
+           
     )
 }
