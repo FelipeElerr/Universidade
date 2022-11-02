@@ -6,7 +6,7 @@ import Icon from 'react-native-vector-icons/FontAwesome';
 
 import Home from './Componentes/Home/home';
 import Menu from './Componentes/Menu/menu';
-
+import Config from './Componentes/Configurações/configs';
 
 
 
@@ -27,6 +27,15 @@ function MyTabs() {
             <Tab.Screen name="Menu" component={Menu}
                 options={{
                     tabBarLabel: "Menu",
+                    tabBarIcon: () => (
+                        <Icon name="tasks" size={30} color="black" />
+                    )
+                }}
+            />
+
+            <Tab.Screen name="Config" component={Config}
+                options={{
+                    tabBarLabel: "Configurações",
                     tabBarIcon: () => (
                         <Icon name="tasks" size={30} color="black" />
                     )

@@ -63,7 +63,7 @@ function Home() {
                         style={{ width: tamanho, height: tamanho, resizeMode: 'contain' }}
                         source={{ uri: imagens[2] }}
                     />
-                    <Text> Matheus Carvalho Patriarca de Paschoa - 200347</Text>
+                    <Text> Matheus Carvalho storeBackgroundarca de Paschoa - 200347</Text>
                 </View>
 
 
