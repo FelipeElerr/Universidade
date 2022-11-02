@@ -3,6 +3,7 @@ import { View, Text, FlatList, TextInput, Button, DrawerLayoutAndroidBase, Turbo
 
 import ConsultaProfessor from '../API/Professor/consultaProfessor'
 import AdicionaProfessor from '../API/Professor/adicionaProfessor'
+import PlanoDeFundo from './planoDeFundo'
 
 export default function App(props) {
 
@@ -12,7 +13,7 @@ export default function App(props) {
 
   return (
     <>
-      <View style={{ flex: 1, backgroundColor:'#005c81' }}>
+    <PlanoDeFundo>
         <TextInput
           value={nome}
           placeholder="Digite seu nome!"
@@ -41,8 +42,7 @@ export default function App(props) {
           </Text>
         </View>
         <ConsultaProfessor />
-      </View>
-
+    </PlanoDeFundo>
     </>
 
   );

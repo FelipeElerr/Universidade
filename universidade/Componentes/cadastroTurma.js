@@ -3,6 +3,7 @@ import { View, Text, FlatList, TextInput, Button, DrawerLayoutAndroidBase, Turbo
 
 import ConsultaTurma from '../API/Turma/consultaTurma'
 import AdicionaTurma from '../API/Turma/adicionaTurma'
+import PlanoDeFundo from './planoDeFundo'
 
 export default function App(props) {
 
@@ -13,7 +14,7 @@ export default function App(props) {
 
   return (
     <>
-      <View style={{ flex: 1, backgroundColor:'#005c81' }}>
+      <PlanoDeFundo>
         <TextInput
           value={cod_disc}
           placeholder="Digite o código da disciplina!"
@@ -49,7 +50,7 @@ export default function App(props) {
           </Text>
         </View>
         <ConsultaTurma />
-      </View>
+      </PlanoDeFundo>
 
     </>
 
