@@ -22,7 +22,7 @@ export default function VisualizarHistorico(props) {
                     title='Filtrar'
                     onPress={() =>
                         props.navigation.navigate('VisualizaHistoricoFiltradoBanco', {
-                            matricula: {turma},
+                            turma: {turma},
                         })
                     }
                 />
