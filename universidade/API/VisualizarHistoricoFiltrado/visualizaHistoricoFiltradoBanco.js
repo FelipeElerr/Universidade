@@ -46,6 +46,8 @@ export default function VisualizaHistoricoFiltradoBanco({ route }) {
                 setVetorAluno(vetor3)
                 for (let i = 0; i < vetorHistorico.length; i++) {
                     console.log('passou')
+                    console.log('vetorHistorico: ', vetorHistorico[i].cod_turma);
+                    console.log('Parametro matricula: ', route.params.turma );
                     if (vetorHistorico[i].cod_turma == route.params.turma) {
                         console.log('entrouIF1')
                         vetorAluno.forEach(item => {
