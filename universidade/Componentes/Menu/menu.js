@@ -14,6 +14,8 @@ import AtualizarHistorico from '../Historico/atualizarHistorico'
 import VisualizarTurmas from './VizualizaTurmas/visualizarTurmas'
 import VizualizaAlunos from './VizualizaTurmas/vizualizaAlunos'
 import VizualizaHistoricoBanco from '../../API/VisualizaTurma/visualizaHistoricoBanco';
+import VisualizarHistorico from './VisualizaHistórico/visualizaHistorico';
+import VisualizaHistoricoFiltradoBanco from '../../API/VisualizarHistoricoFiltrado/visualizaHistoricoFiltradoBanco';
 
 import { BackgroundProvider } from '../Configuracoes/configuracoes';
 import PlanoDeFundo from '../Configuracoes/planoDeFundo';
@@ -71,6 +73,14 @@ function OpcoesMenu(props) {
                 />
             </View>
 
+            <View style={{ marginTop: 20 }}>
+                <Button
+                    color='#005c81'
+                    title="Visualizar Históricos"
+                    onPress={() => props.navigation.navigate('VisualizarHistorico')}
+                />
+            </View>
+
         </View>
     );
 }
@@ -92,6 +102,8 @@ export default function Menu() {
                         <Pilha.Screen name='VisualizarTurmas' component={VisualizarTurmas} />
                         <Pilha.Screen name='VizualizaAlunos' component={VizualizaAlunos} />
                         <Pilha.Screen name='VizualizaHistoricoBanco' component={VizualizaHistoricoBanco} />
+                        <Pilha.Screen name='VisualizarHistorico' component={VisualizarHistorico} />
+                        <Pilha.Screen name='VisualizaHistoricoFiltradoBanco' component={VisualizaHistoricoFiltradoBanco} />
                     </Pilha.Navigator>
                 </NavigationContainer>
             </PlanoDeFundo>

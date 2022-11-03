@@ -29,6 +29,11 @@ export default function ConsultaAluno() {
     },[]
   );
 
+  useEffect(
+    ()=>{
+    },[vetor]
+  );
+
   //get collection data
   const retornaDados = async ()=>{
 

@@ -11,7 +11,7 @@ export default function ConsultaHistorico() {
 
   const renderiza = ({item})=>{
     return(
-      <View style={{flexDirection:'row'}}>
+      <View style={{flexDirection:'row', justifyContent: 'space-between' }}>
         <Text style={{flex:1, color:'black', padding:3}}> {item.matricula} </Text>
         <Text style={{flex:1, color:'black', padding:3}}> {item.cod_turma} </Text>
         <Text style={{flex:1, color:'black', padding:3}}> {item.frequencia} </Text>
