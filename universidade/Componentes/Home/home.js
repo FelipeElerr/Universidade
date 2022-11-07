@@ -43,7 +43,7 @@ function Home() {
                     </Text>
                 </View>
 
-                <View style={{ flex: 1, flexDirection: 'row', justifyContent: 'center' }}>
+                <View style={{ flex: 1, flexDirection: 'row', justifyContent: 'center', margin:40 }}>
 
                     <View style={{ flex: 1, flexDirection: 'column', justifyContent: 'center' }}>
                         <Image
