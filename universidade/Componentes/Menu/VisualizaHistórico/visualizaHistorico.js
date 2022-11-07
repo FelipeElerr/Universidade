@@ -27,7 +27,7 @@ export default function VisualizarHistorico(props) {
                 }
                 }
             />
-            <View style={{ flexDirection: 'row', justifyContent: 'space-between', alignContent: 'center' }}>
+            {/* <View style={{ flexDirection: 'row', justifyContent: 'space-between', alignContent: 'center' }}>
                 <Text>
                     Código da Matrícula:
                 </Text>
@@ -40,8 +40,12 @@ export default function VisualizarHistorico(props) {
                 <Text>
                     Nota:
                 </Text>
-            </View>
+            </View> */}
+            <View style={{flex:1, flexDirection:'row', justifyContent:'center', margin:20}}>
             <ConsultaHistorico />
+            </View>
+    
+            
         </View>
 
     )

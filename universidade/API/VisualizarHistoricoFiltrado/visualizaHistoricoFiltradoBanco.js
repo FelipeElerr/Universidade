@@ -107,31 +107,29 @@ export default function VisualizaHistoricoFiltradoBanco({ route }) {
     const renderiza = ({ item }) => {
 
         return (
-            <View style={{ flex: 1, flexDirection: 'row', justifyContent: 'space-between' }}>
-                <Text>{item.nome}</Text>
-                <Text>{item.nota}</Text>
+            <View style={{flexDirection:'row', justifyContent: 'space-between' }}>
+                <Text><spam style={{ fontWeight: "bold" }}>Nome: </spam>{item.nome} - <spam style={{ fontWeight: "bold" }}>Nota: </spam> {item.nota}</Text>
             </View>
         );
     }
 
     return (
-        <View style={{ flex: 1 }}>
+        <View style={{ flex:1, flexDirection: 'column', justifyContent: 'space-between' }}>
             <Image
                 style={{ width: 300, height: 300, resizeMode: 'contain' }}
                 source={{ uri: () => { retornaFoto() } }}
             />
-            <View style={{ flexDirection: 'row', justifyContent: 'space-between' }}>
-                <Text>Aluno</Text>
-                <Text>Nota</Text>
+            <View style={{flex:1, flexDirection: 'row', justifyContent: 'center', margin:20, marginBottom: 60 }}>
+                <FlatList
+                    data={list}
+                    keyExtractor={item => item.id}
+                    renderItem={renderiza}
+                    ItemSeparatorComponent={separador}
+                    ListHeaderComponent={separador}
+                    ListFooterComponent={separador}
+                />
             </View>
-            <FlatList
-                data={list}
-                keyExtractor={item => item.id}
-                renderItem={renderiza}
-                ItemSeparatorComponent={separador}
-                ListHeaderComponent={separador}
-                ListFooterComponent={separador}
-            />
+
         </View>
     );
 }
