@@ -1,6 +1,8 @@
 import React, { useEffect, useState } from 'react';
 import { StyleSheet, Text, View, FlatList, Image, Dimensions } from 'react-native';
 
+import PlanoDeFundo from '../Configuracoes/planoDeFundo'
+
 function Home() {
 
     const [dados, setDados] = useState([]);
@@ -33,43 +35,45 @@ function Home() {
     const tamanho = Dimensions.get('window').width / numColunas
 
     return (
-        <View>
+        <PlanoDeFundo>
             <View>
-                <Text style={{ fontSize: 30, textAlign: 'center' }}>
-                    Integrantes:
-                </Text>
+                <View>
+                    <Text style={{ fontSize: 30, textAlign: 'center' }}>
+                        Integrantes:
+                    </Text>
+                </View>
+
+                <View style={{ flex: 1, flexDirection: 'row', justifyContent: 'center' }}>
+
+                    <View style={{ flex: 1, flexDirection: 'column', justifyContent: 'center' }}>
+                        <Image
+                            style={{ width: tamanho, height: tamanho, resizeMode: 'contain' }}
+                            source={{ uri: imagens[0] }}
+                        />
+                        <Text> Rafael Henrique Lavagnini- 200767 </Text>
+                    </View>
+
+                    <View style={{ flex: 1, flexDirection: 'column', justifyContent: 'center' }}>
+                        <Image
+                            style={{ width: tamanho, height: tamanho, resizeMode: 'contain' }}
+                            source={{ uri: imagens[1] }}
+                        />
+                        <Text> Felipe Eler de Oliveira Machado - 200738</Text>
+                    </View>
+
+                    <View style={{ flex: 1, flexDirection: 'column', justifyContent: 'center' }}>
+                        <Image
+                            style={{ width: tamanho, height: tamanho, resizeMode: 'contain' }}
+                            source={{ uri: imagens[2] }}
+                        />
+                        <Text> Matheus Carvalho Patriarca de Paschoa - 200347</Text>
+                    </View>
+
+
+
+                </View>
             </View>
-
-            <View style={{ flex: 1, flexDirection: 'row', justifyContent: 'center' }}>
-
-                <View style={{ flex: 1, flexDirection: 'column', justifyContent: 'center' }}>
-                    <Image
-                        style={{ width: tamanho, height: tamanho, resizeMode: 'contain' }}
-                        source={{ uri: imagens[0] }}
-                    />
-                    <Text> Rafael Henrique Lavagnini- 200767 </Text>
-                </View>
-
-                <View style={{ flex: 1, flexDirection: 'column', justifyContent: 'center' }}>
-                    <Image
-                        style={{ width: tamanho, height: tamanho, resizeMode: 'contain' }}
-                        source={{ uri: imagens[1] }}
-                    />
-                    <Text> Felipe Eler de Oliveira Machado - 200738</Text>
-                </View>
-
-                <View style={{ flex: 1, flexDirection: 'column', justifyContent: 'center' }}>
-                    <Image
-                        style={{ width: tamanho, height: tamanho, resizeMode: 'contain' }}
-                        source={{ uri: imagens[2] }}
-                    />
-                    <Text> Matheus Carvalho Patriarca de Paschoa - 200347</Text>
-                </View>
-
-
-
-            </View>
-        </View>
+        </PlanoDeFundo>
     );
 }
 

@@ -8,9 +8,10 @@ import Home from './Componentes/Home/home';
 import Menu from './Componentes/Menu/menu';
 import Configuracoes from './Componentes/Configuracoes/configuracoes';
 
+import { BackgroundProvider } from './Componentes/Configuracoes/configuracoes';
+import PlanoDeFundo from './Componentes/Configuracoes/planoDeFundo';
 
-
-const Tab = createBottomTabNavigator();
+const Tab = createBottomTabNavigator(); 
 
 function MyTabs() {
     return (
@@ -50,9 +51,11 @@ function MyTabs() {
 export default function App() {
     return (
         <>
-            <NavigationContainer independent={true}>
-                <MyTabs />
-            </NavigationContainer>
+            <BackgroundProvider>
+                    <NavigationContainer independent={true}>
+                        <MyTabs />
+                    </NavigationContainer>
+            </BackgroundProvider>
         </>
     )
 }
