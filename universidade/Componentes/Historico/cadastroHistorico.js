@@ -5,6 +5,8 @@ import { View, Text, FlatList, TextInput, Button, DrawerLayoutAndroidBase, Turbo
 import ConsultaHistorico from '../../API/Historico/consultaHistorico'
 import AdicionaHistorico from '../../API/Historico/adicionaHistorico'
 
+import PlanoDeFundo from '../Configuracoes/planoDeFundo'
+
 export default function CadastroHistorico(props) {
 
   const [matricula, setMatricula] = useState("");
@@ -14,7 +16,7 @@ export default function CadastroHistorico(props) {
 
   return (
     <>
-      <View style={{ flex: 1, backgroundColor:'#005c81' }}>
+      <PlanoDeFundo>
         <TextInput
           value={matricula}
           placeholder="Digite a matícula!"
@@ -65,7 +67,7 @@ export default function CadastroHistorico(props) {
           </Text>
         </View>
         <ConsultaHistorico />
-      </View>
+      </PlanoDeFundo>
 
     </>
 

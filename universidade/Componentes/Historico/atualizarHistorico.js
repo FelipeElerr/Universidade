@@ -3,6 +3,7 @@ import { View, Text, FlatList, TextInput, Button, DrawerLayoutAndroidBase, Turbo
 import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack'
 import AtualizarHistoricoBanco from '../../API/Historico/atualizarHistoricoBanco';
+import PlanoDeFundo from '../Configuracoes/planoDeFundo';
 
 
 export default function App(props) {
@@ -14,7 +15,7 @@ export default function App(props) {
 
     return (
         <>
-            <View style={{ flex: 1, backgroundColor: '#005c81' }}>
+            <PlanoDeFundo>
                 <TextInput
                     value={cod_historico}
                     placeholder="Digite o código do histórico que será atualizado!"
@@ -51,8 +52,7 @@ export default function App(props) {
                 />
 
                 <AtualizarHistoricoBanco cod_historico={cod_historico} matricula={matricula} cod_turma={cod_turma} frequencia={frequencia} nota={nota} />
-
-            </View>
+            </PlanoDeFundo>
 
         </>
 
