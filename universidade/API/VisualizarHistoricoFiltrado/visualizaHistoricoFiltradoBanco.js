@@ -3,6 +3,7 @@ import { View, Text, FlatList, Dimensions, Image } from 'react-native'
 import { collection, getDocs } from 'firebase/firestore'
 
 import db from '../../config'
+import PlanoDeFundo from '../../Componentes/Configuracoes/planoDeFundo'
 
 export default function VisualizaHistoricoFiltradoBanco({ route }) {
     const colecaoHistorico = collection(db, 'Histórico');
@@ -107,29 +108,31 @@ export default function VisualizaHistoricoFiltradoBanco({ route }) {
     const renderiza = ({ item }) => {
 
         return (
-            <View style={{flexDirection:'row', justifyContent: 'space-between' }}>
+            <View style={{ flexDirection: 'row', justifyContent: 'space-between' }}>
                 <Text><spam style={{ fontWeight: "bold" }}>Nome: </spam>{item.nome} - <spam style={{ fontWeight: "bold" }}>Nota: </spam> {item.nota}</Text>
             </View>
         );
     }
 
     return (
-        <View style={{ flex:1, flexDirection: 'column', justifyContent: 'space-between' }}>
-            <Image
-                style={{ width: 300, height: 300, resizeMode: 'contain' }}
-                source={{ uri: () => { retornaFoto() } }}
-            />
-            <View style={{flex:1, flexDirection: 'row', justifyContent: 'center', margin:20, marginBottom: 60 }}>
-                <FlatList
-                    data={list}
-                    keyExtractor={item => item.id}
-                    renderItem={renderiza}
-                    ItemSeparatorComponent={separador}
-                    ListHeaderComponent={separador}
-                    ListFooterComponent={separador}
+        <PlanoDeFundo>
+            <View style={{ flex: 1, flexDirection: 'column', justifyContent: 'space-between' }}>
+                <Image
+                    style={{ width: 300, height: 300, resizeMode: 'contain' }}
+                    source={{ uri: () => { retornaFoto() } }}
                 />
+                <View style={{ flex: 1, flexDirection: 'row', justifyContent: 'center', margin: 20 }}>
+                    <FlatList
+                        data={list}
+                        keyExtractor={item => item.id}
+                        renderItem={renderiza}
+                        ItemSeparatorComponent={separador}
+                        ListHeaderComponent={separador}
+                        ListFooterComponent={separador}
+                    />
+                </View>
             </View>
+        </PlanoDeFundo>
 
-        </View>
     );
 }
