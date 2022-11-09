@@ -8,10 +8,9 @@ import Home from './Componentes/Home/home';
 import Menu from './Componentes/Menu/menu';
 import Configuracoes from './Componentes/Configuracoes/configuracoes';
 
-import { BackgroundProvider } from './Componentes/Configuracoes/configuracoes';
-import PlanoDeFundo from './Componentes/Configuracoes/planoDeFundo';
 
-const Tab = createBottomTabNavigator(); 
+
+const Tab = createBottomTabNavigator();
 
 function MyTabs() {
     return (
@@ -38,7 +37,7 @@ function MyTabs() {
                 options={{
                     tabBarLabel: "Configurações",
                     tabBarIcon: () => (
-                        <Icon name="gear" size={30} color="black" />
+                        <Icon name="tasks" size={30} color="black" />
                     )
                 }}
             />
@@ -51,11 +50,9 @@ function MyTabs() {
 export default function App() {
     return (
         <>
-            <BackgroundProvider>
-                    <NavigationContainer independent={true}>
-                        <MyTabs />
-                    </NavigationContainer>
-            </BackgroundProvider>
+            <NavigationContainer independent={true}>
+                <MyTabs />
+            </NavigationContainer>
         </>
     )
 }

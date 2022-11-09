@@ -3,6 +3,7 @@ import { Text, View, StyleSheet, ImageBackground, Button, Alert, onPress, Image 
 
 //import AsyncStorage from '@react-native-async-storage/async-storage';
 
+//const imagem1 = "https://img.freepik.com/fotos-gratis/figura-triangular-geometrica-legal-em-uma-luz-de-laser-neon-otima-para-fundos-e-papeis-de-parede_181624-9840.jpg";
 import imagem1 from "./img/imgback1.png"
 import imagem2 from "./img/imgback2.png";
 import imagem3 from "./img/imgback3.png";

@@ -4,8 +4,6 @@ import { View, Text, FlatList, TextInput, Button, DrawerLayoutAndroidBase, Turbo
 import ConsultaAluno from '../API/Aluno/consultaAluno'
 import AdicionaAluno from '../API/Aluno/adicionaAluno'
 
-import PlanoDeFundo from './Configuracoes/planoDeFundo'
-
 export default function App(props) {
 
   const [nome, setNome] = useState("");
@@ -15,7 +13,7 @@ export default function App(props) {
 
   return (
     <>
-      <PlanoDeFundo>
+      <View style={{ flex: 1, backgroundColor:'#005c81' }}>
         <TextInput
           value={nome}
           placeholder="Digite seu nome!"
@@ -51,7 +49,7 @@ export default function App(props) {
           </Text>
         </View>
         <ConsultaAluno />
-      </PlanoDeFundo>
+      </View>
 
     </>
 

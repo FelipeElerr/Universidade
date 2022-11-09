@@ -17,15 +17,15 @@ import VizualizaHistoricoBanco from '../../API/VisualizaTurma/visualizaHistorico
 import VisualizarHistorico from './VisualizaHistórico/visualizaHistorico';
 import VisualizaHistoricoFiltradoBanco from '../../API/VisualizarHistoricoFiltrado/visualizaHistoricoFiltradoBanco';
 
-
+import { BackgroundProvider } from '../Configuracoes/configuracoes';
 import PlanoDeFundo from '../Configuracoes/planoDeFundo';
 
 const Pilha = createNativeStackNavigator();
 
 function OpcoesMenu(props) {
     return (
-        <PlanoDeFundo>
-            "<View style={{ marginTop: 20 }}>
+        <View style={{ flex: 1, backgroundColor: '#368986' }}>
+            <View style={{ marginTop: 20 }}>
                 <Button
                     color='#005c81'
                     title="Cadastro de Aluno"
@@ -80,12 +80,14 @@ function OpcoesMenu(props) {
                     onPress={() => props.navigation.navigate('VisualizarHistorico')}
                 />
             </View>
-        </PlanoDeFundo>
+
+        </View>
     );
 }
 
 export default function Menu() {
     return (
+        <BackgroundProvider>
             <PlanoDeFundo>
                 <NavigationContainer independent={true}>
                     <Pilha.Navigator>
@@ -105,5 +107,6 @@ export default function Menu() {
                     </Pilha.Navigator>
                 </NavigationContainer>
             </PlanoDeFundo>
+        </BackgroundProvider>
     )
 }
