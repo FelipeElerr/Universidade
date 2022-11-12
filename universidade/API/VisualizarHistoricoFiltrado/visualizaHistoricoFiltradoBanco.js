@@ -47,16 +47,9 @@ export default function VisualizaHistoricoFiltradoBanco({ route }) {
 
                 setVetorAluno(vetor3)
                 for (let i = 0; i < vetorHistorico.length; i++) {
-                    console.log('passou')
-                    console.log('vetorHistorico: ', vetorHistorico[i].cod_turma);
-                    console.log('Parametro matricula: ', route.params.turma);
                     if (vetorHistorico[i].cod_turma == route.params.turma) {
-                        console.log('entrouIF1')
                         vetorAluno.forEach(item => {
                             if (item.id == vetorHistorico[i].matricula) {
-                                console.log('entrouIF2')
-                                console.log('Nome: ', vetorAluno)
-                                console.log('Nota: ', vetorHistorico)
                                 dadosTela.push({ id: item.id, nome: item.nome, nota: vetorHistorico[i].nota })
                             }
                         })
@@ -87,7 +80,6 @@ export default function VisualizaHistoricoFiltradoBanco({ route }) {
                     }
                 });
                 setList(newList);
-                console.log('Dados tela:', dadosTela);
 
             } catch (erro) {
                 console.log(erro.message)
@@ -109,7 +101,7 @@ export default function VisualizaHistoricoFiltradoBanco({ route }) {
 
         return (
             <View style={{ flexDirection: 'row', justifyContent: 'space-between' }}>
-                <Text><spam style={{ fontWeight: "bold" }}>Nome: </spam>{item.nome} - <spam style={{ fontWeight: "bold" }}>Nota: </spam> {item.nota}</Text>
+                <Text><span style={{ fontWeight: "bold" }}>Nome: </span>{item.nome} - <span style={{ fontWeight: "bold" }}>Nota: </span> {item.nota}</Text>
             </View>
         );
     }

@@ -5,11 +5,11 @@ import { collection, getDocs } from 'firebase/firestore'
 
 import db from '../../config'
 
-export default function VizualizaTurmaBanco(props) {
+export default function VisualizaTurmaBanco(props) {
   const colecaoRef = collection(db, 'Turma');
 
   const [vetor, setVetor] = useState([]);
-  
+
 
   const adicionandoDados = () => {
 
@@ -17,24 +17,24 @@ export default function VizualizaTurmaBanco(props) {
 
   const renderiza = ({ item }) => {
     return (
-      <View style={{ flexDirection: 'row', justifyContent: 'space-between' }}>
-        <View style={{ flexDirection: 'column' }}>
-          <Text style={{ flex: 1, color: 'black', padding: 3 }}> {item.id} </Text>
-        </View>
-
-        <View style={{ flexDirection: 'column' }}>
-          <Text style={{ flex: 1, color: 'black', padding: 3 }}> {item.cod_disc} </Text>
-        </View>
-
-        <View style={{ flexDirection: 'column' }}>
-          <Text style={{ flex: 1, color: 'black', padding: 3 }}> {item.cod_prof} </Text>
+      <View style={{ flex:1, flexDirection: 'row', justifyContent: 'space-between' }}>
+        <View style={{flex:1}}>
+          <Text style={{ flex: 1, color: 'black', padding: 3 }}>
+            <span style={{ fontWeight: "bold" }}>Código da turma: </span>{item.id}  
+          </Text>
+          <Text style={{ flex: 1, color: 'black', padding: 3 }}>
+          <span style={{ fontWeight: "bold" }}>Código da disciplina: </span> {item.cod_disc}
+          </Text>
+          <Text style={{ flex: 1, color: 'black', padding: 3 }}>
+          <span style={{ fontWeight: "bold" }}>Código do Professor: </span> {item.cod_prof}
+          </Text>
         </View>
 
         <Button
           color='#005c81'
           title="Ver alunos"
           onPress={() =>
-            props.navigation.navigate('VizualizaAlunos', {
+            props.navigation.navigate('VisualizaAlunos', {
               paramKey: item.id,
               navigation: props.navigation
             })
@@ -79,7 +79,7 @@ export default function VizualizaTurmaBanco(props) {
   }
 
   return (
-    <View>
+    <View style={{flex:1}}>
       <FlatList
         data={vetor}
         keyExtractor={item => item.id}

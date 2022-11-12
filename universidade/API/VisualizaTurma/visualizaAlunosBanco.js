@@ -1,8 +1,9 @@
 import React, { useEffect, useState } from 'react'
-import { View, Text, FlatList, Image, Dimensions, Button } from 'react-native'
+import { View, Text, FlatList, Image, Dimensions, Button, ScrollView } from 'react-native'
 import { collection, getDocs } from 'firebase/firestore'
 
 import db from '../../config'
+
 
 export default function VisualizaAlunosBanco(props) {
     const colecaoHistorico = collection(db, 'Histórico');
@@ -23,10 +24,11 @@ export default function VisualizaAlunosBanco(props) {
                     source={{ uri: item.foto }}
                 />
                 <Button
+                    style={{ width: 200 }}
                     color='#005c81'
                     title={item.nome}
                     onPress={() =>
-                        props.navigation.navigate('VizualizaHistoricoBanco', {
+                        props.navigation.navigate('VisualizaHistoricoBanco', {
                             matricula: item.id,
                         })
                     }
@@ -115,14 +117,17 @@ export default function VisualizaAlunosBanco(props) {
 
     return (
         <View style={{ flex: 1 }}>
-            <FlatList
-                data={dadosAlunosTurma}
-                keyExtractor={item => item.id}
-                renderItem={renderiza}
-                ItemSeparatorComponent={separador}
-                ListHeaderComponent={separador}
-                ListFooterComponent={separador}
-            />
+            
+                <FlatList 
+                    scrollEnabled
+                    data={dadosAlunosTurma}
+                    keyExtractor={item => item.id}
+                    renderItem={renderiza}
+                    ItemSeparatorComponent={separador}
+                    ListHeaderComponent={separador}
+                    ListFooterComponent={separador}
+                />
+     
         </View>
     );
 }

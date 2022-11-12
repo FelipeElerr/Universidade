@@ -11,9 +11,9 @@ import CadastroTurma from '../cadastroTurma'
 import CadastroHistorico from '../Historico/cadastroHistorico'
 import DeletarHistorico from '../Historico/deletarHistorico'
 import AtualizarHistorico from '../Historico/atualizarHistorico'
-import VisualizarTurmas from './VizualizaTurmas/visualizarTurmas'
-import VizualizaAlunos from './VizualizaTurmas/vizualizaAlunos'
-import VizualizaHistoricoBanco from '../../API/VisualizaTurma/visualizaHistoricoBanco';
+import VisualizarTurmas from './VisualizaTurmas/visualizarTurmas'
+import VisualizaAlunos from './VisualizaTurmas/visualizaAlunos'
+import VisualizaHistoricoBanco from '../../API/VisualizaTurma/visualizaHistoricoBanco';
 import VisualizarHistorico from './VisualizaHistórico/visualizaHistorico';
 import VisualizaHistoricoFiltradoBanco from '../../API/VisualizarHistoricoFiltrado/visualizaHistoricoFiltradoBanco';
 
@@ -98,8 +98,8 @@ export default function Menu() {
                         <Pilha.Screen name='DeletarHistorico' component={DeletarHistorico} />
                         <Pilha.Screen name='AtualizarHistorico' component={AtualizarHistorico} />
                         <Pilha.Screen name='VisualizarTurmas' component={VisualizarTurmas} />
-                        <Pilha.Screen name='VizualizaAlunos' component={VizualizaAlunos} />
-                        <Pilha.Screen name='VizualizaHistoricoBanco' component={VizualizaHistoricoBanco} />
+                        <Pilha.Screen name='VisualizaAlunos' component={VisualizaAlunos} />
+                        <Pilha.Screen name='VisualizaHistoricoBanco' component={VisualizaHistoricoBanco} />
                         <Pilha.Screen name='VisualizarHistorico' component={VisualizarHistorico} />
                         <Pilha.Screen name='VisualizaHistoricoFiltradoBanco' component={VisualizaHistoricoFiltradoBanco} />
                     </Pilha.Navigator>

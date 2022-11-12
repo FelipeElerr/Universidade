@@ -12,7 +12,9 @@ export default function ConsultaAluno() {
   const renderiza = ({item})=>{
     return(
       <View style={{flexDirection:'row'}}>
-        <Text style={{flex:1, color:'black', padding:3}}> {item.nome } </Text>
+        <Text style={{flex:1, color:'black', padding:3}}> 
+        <span style={{fontWeight: "bold"}}>Código do Professor: </span>{item.id} - <span style={{fontWeight: "bold"}}>Professor: </span> {item.nome} 
+        </Text>
       </View>
     );
   }

@@ -12,10 +12,8 @@ export default function ConsultaHistorico() {
   const renderiza = ({item})=>{
     return(
       <View style={{flexDirection:'row', justifyContent: 'space-between' }}>
-        <Text style={{flex:1, color:'black', padding:3}}> <spam style={{fontWeight: "bold"}}>Código da matrícula:</spam> {item.matricula} - <spam style={{fontWeight: "bold"}}>Código da turma:</spam> {item.cod_turma} - <spam style={{fontWeight: "bold"}}>Frequência:</spam> {item.frequencia} - <spam style={{fontWeight: "bold"}}>Nota: </spam>{item.nota} </Text>
-        {/* <Text style={{flex:1, color:'black', padding:3}}> {item.cod_turma} </Text>
-        <Text style={{flex:1, color:'black', padding:3}}> {item.frequencia} </Text>
-        <Text style={{flex:1, color:'black', padding:3}}> {item.nota} </Text> */}
+        <Text style={{flex:1, color:'black', padding:3}}> 
+        <span style={{fontWeight: "bold"}}>Código do Histórico:</span> {item.id} - <span style={{fontWeight: "bold"}}>Código da matrícula:</span> {item.matricula} - <span style={{fontWeight: "bold"}}>Código da turma:</span> {item.cod_turma} - <span style={{fontWeight: "bold"}}>Frequência:</span> {item.frequencia} - <span style={{fontWeight: "bold"}}>Nota: </span>{item.nota} </Text>
       </View>
     );
   }

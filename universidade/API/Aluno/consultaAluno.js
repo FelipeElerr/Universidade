@@ -12,9 +12,9 @@ export default function ConsultaAluno() {
   const renderiza = ({ item }) => {
     return (
       <View style={{ flex: 1, flexDirection: 'row', justifyContent:'space-between'}}>
-        <Text style={{ flex: 1, color: 'black', padding: 3 }}> {item.id} </Text>
-        <Text style={{ flex: 1, color: 'black', padding: 3 }}> {item.nome} </Text>
-
+        <Text style={{ flex: 1, color: 'black', padding: 3 }}>
+          <span style={{fontWeight: "bold"}}>Código da matrícula: </span>{item.id} - <span style={{fontWeight: "bold"}}>Aluno: </span> {item.nome}
+        </Text>
       </View>
     );
   }
@@ -60,10 +60,6 @@ export default function ConsultaAluno() {
 
   return (
     <View>
-      <View style={{ flexDirection: 'row', justifyContent: 'space-between' }}>
-        <Text>Matrícula:</Text>
-        <Text>Aluno:</Text>
-      </View>
       <FlatList
         data={vetor}
         keyExtractor={item => item.id}

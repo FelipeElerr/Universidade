@@ -15,7 +15,7 @@ const Tab = createBottomTabNavigator();
 
 function MyTabs() {
     return (
-        <Tab.Navigator>
+        <Tab.Navigator style={{flex:1}}>
             <Tab.Screen name="Home" component={Home}
                 options={{
                     tabBarLabel: "Home",

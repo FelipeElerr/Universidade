@@ -12,7 +12,9 @@ export default function ConsultaDisciplina() {
   const renderiza = ({item})=>{
     return(
       <View style={{flexDirection:'row'}}>
-        <Text style={{flex:1, color:'black', padding:3}}> {item.nome_disc} </Text>
+        <Text style={{flex:1, color:'black', padding:3}}> 
+        <span style={{fontWeight: "bold"}}>Código da disciplina: </span>{item.id} - <span style={{fontWeight: "bold"}}>Nome da Disciplina: </span> {item.nome_disc}
+        </Text>
       </View>
     );
   }

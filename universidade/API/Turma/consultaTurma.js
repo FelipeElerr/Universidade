@@ -1,68 +1,67 @@
 import React, { useEffect, useState } from 'react'
 import { View, Text, FlatList } from 'react-native'
-import { collection, getDocs} from 'firebase/firestore'
+import { collection, getDocs } from 'firebase/firestore'
 
 import db from '../../config'
 
 export default function ConsultaTurma() {
-  const colecaoRef = collection(db,'Turma');
+  const colecaoRef = collection(db, 'Turma');
 
   const [vetor, setVetor] = useState([]);
 
-  const renderiza = ({item})=>{
-    return(
+  const renderiza = ({ item }) => {
+    return (
       <View style={{flexDirection:'row'}}>
-        <Text style={{flex:1, color:'black', padding:3}}> {item.cod_disc } </Text>
-        <Text style={{flex:1, color:'black', padding:3}}> {item.cod_prof } </Text>
-        <Text style={{flex:1, color:'black', padding:3}}> {item.ano } </Text>
-        <Text style={{flex:1, color:'black', padding:3}}> {item.horario } </Text>
+        <Text style={{flex:1, color:'black', padding:3}}> 
+        <span style={{ fontWeight: "bold" }}>Código da Disciplina: </span>{item.cod_disc}  <span style={{ fontWeight: "bold" }}>Código do Professor: </span> {item.cod_prof}  <span style={{ fontWeight: "bold" }}>Ano: </span> {item.ano}  <span style={{ fontWeight: "bold" }}>Horário: </span> {item.horario} 
+        </Text>
       </View>
     );
   }
 
-  const separador = ()=>{
-    return( 
-        <View style={{height:1, backgroundColor:'black', width:'100%'}}></View>
-     );
+  const separador = () => {
+    return (
+      <View style={{ height: 1, backgroundColor: 'black', width: '100%' }}></View>
+    );
   }
 
   useEffect(
-    ()=>{
+    () => {
       retornaDados()
-    },[]
+    }, []
   );
 
   //get collection data
-  const retornaDados = async ()=>{
+  const retornaDados = async () => {
 
-    try{
+    try {
       const snapshot = await getDocs(colecaoRef)
 
-      for(let i=0;i<snapshot.docs.length;i++){
-        const dado = {id:snapshot.docs[i].id, cod_disc:snapshot.docs[i].data().cod_disc, cod_prof: snapshot.docs[i].data().cod_prof, ano: snapshot.docs[i].data().ano, horario: snapshot.docs[i].data().horario}
-        vetor.push( dado )
+      for (let i = 0; i < snapshot.docs.length; i++) {
+        const dado = { id: snapshot.docs[i].id, cod_disc: snapshot.docs[i].data().cod_disc, cod_prof: snapshot.docs[i].data().cod_prof, ano: snapshot.docs[i].data().ano, horario: snapshot.docs[i].data().horario }
+        vetor.push(dado)
       }
 
-      
+
       const vetor2 = vetor.slice()
 
       setVetor(vetor2)
 
-    }catch(erro) {
+    } catch (erro) {
       console.log(erro.message)
     }
 
   }
 
-  return(
-    <View>
-      <FlatList 
-          data ={vetor} 
-          keyExtractor={item => item.id}
-          renderItem={renderiza}
-          ItemSeparatorComponent={separador}
-          ListHeaderComponent={separador}
-          ListFooterComponent={separador}
+  return (
+    <View >
+      <FlatList
+        data={vetor}
+        keyExtractor={item => item.id}
+        renderItem={renderiza}
+        ItemSeparatorComponent={separador}
+        ListHeaderComponent={separador}
+        ListFooterComponent={separador}
       />
     </View>
   );

@@ -44,24 +44,22 @@ export default function VisualizaHistoricoBanco({ route }) {
                 const vetor3 = vetorAluno.slice()
 
                 setVetorAluno(vetor3)
+                let varKey = 1;
                 for (let i = 0; i < vetorHistorico.length; i++) {
-                    console.log('passou')
                     if (vetorHistorico[i].matricula == route.params.matricula) {
-                        console.log('entrouIF1')
                         vetorAluno.forEach(item => {
                             if (item.id == route.params.matricula) {
-                                console.log('entrouIF2')
-                                console.log('Nome: ', vetorAluno)
-                                console.log('Nota: ', vetorHistorico)
-                                dadosTela.push({ id:item.id, nome: item.nome, foto:item.foto, frequencia: vetorHistorico[i].frequencia, nota: vetorHistorico[i].nota})
+                                dadosTela.push({ key: varKey, id:item.id, nome: item.nome, foto:item.foto, frequencia: vetorHistorico[i].frequencia, nota: vetorHistorico[i].nota})
+                                varKey = varKey + 1
+                                console.log(varKey)
                             }
+                        
                         })
                     }
                 }
 
                 const vetor4 = dadosTela.slice()
                 setDadosTela(vetor4)
-                console.log('Dados tela:', dadosTela);
 
             } catch (erro) {
                 console.log(erro.message)
@@ -103,7 +101,7 @@ export default function VisualizaHistoricoBanco({ route }) {
             </View>
             <FlatList
                 data={dadosTela}
-                keyExtractor={item => item.id}
+                keyExtractor={item => item.varKey}
                 renderItem={renderiza}
                 ItemSeparatorComponent={separador}
                 ListHeaderComponent={separador}
