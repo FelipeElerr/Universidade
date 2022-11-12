@@ -30,7 +30,7 @@ export default function VisualizarHistorico(props) {
                     }
                 />
    
-                <View style={{ flex: 1, flexDirection: 'row', justifyContent: 'center', margin: 20 }}>
+                <View style={{ flex: 1 }}>
                     <ConsultaHistorico />
                 </View>
 
