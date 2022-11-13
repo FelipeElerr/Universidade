@@ -51,7 +51,6 @@ export default function VisualizaHistoricoBanco({ route }) {
                             if (item.id == route.params.matricula) {
                                 dadosTela.push({ key: varKey, id:item.id, nome: item.nome, foto:item.foto, frequencia: vetorHistorico[i].frequencia, nota: vetorHistorico[i].nota})
                                 varKey = varKey + 1
-                                console.log(varKey)
                             }
                         
                         })

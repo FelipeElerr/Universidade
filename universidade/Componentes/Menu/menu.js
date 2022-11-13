@@ -25,7 +25,7 @@ const Pilha = createNativeStackNavigator();
 function OpcoesMenu(props) {
     return (
         <PlanoDeFundo>
-            "<View style={{ marginTop: 20 }}>
+            <View style={{ marginTop: 20 }}>
                 <Button
                     color='#005c81'
                     title="Cadastro de Aluno"

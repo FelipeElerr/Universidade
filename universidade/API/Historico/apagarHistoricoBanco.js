@@ -8,7 +8,6 @@ import db from '../../config'
 export default function ApagarHistoricoBanco(props) {
   
   const deletandoDados = () => {
-    console.log('Histórico:', props.cod_historico);
     const docRef = doc(db, "Histórico", props.cod_historico);
     getDoc(docRef)
       .then((snap) => {
