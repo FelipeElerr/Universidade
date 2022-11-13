@@ -22,9 +22,9 @@ export default function VizualizaAlunos({route}){
     if(loading == false){
         try {
             return(
-                <View>
-                    <VisualizaAlunosBanco disciplina={route.params.paramKey} navigation={route.params.navigation} />
-                </View>  
+                <View style={{marginLeft:'300', marginRight:'300'}}>
+                    <VisualizaAlunosBanco disciplina={route.params.paramKey} navigation={route.params.navigation}/>
+                </View>
             )
         } catch (error) {
             return(

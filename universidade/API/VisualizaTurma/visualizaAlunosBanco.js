@@ -16,11 +16,32 @@ export default function VisualizaAlunosBanco(props) {
     const renderiza = ({ item }) => {
         const tamanho = Dimensions.get('window').height / matriculas.length
 
-        return (
+        try {
+
+            return (
+                <View style={{ flex: 1, flexDirection: 'row', justifyContent: 'space-between', marginLeft: '500' }}>
+                    <Image
+                        style={{ width: 100, height: 100, resizeMode: 'contain' }}
+                        source={{ uri: item.foto }}
+                    />
+                    <Button
+                        color='#005c81'
+                        title={item.nome}
+                        onPress={() =>
+                            props.navigation.navigate('VizualizaHistoricoBanco', {
+                                matricula: item.id,
+                            })
+                        }
+                    />
+                </View>
+            );
+            
+        } catch (error) {
+            return (
             <View style={{ flex: 1, flexDirection: 'row', justifyContent: 'space-between', marginLeft: '500' }}>
                 <Image
                     style={{ width: 100, height: 100, resizeMode: 'contain' }}
-                    source={{ uri: item.foto }}
+                    source={{ uri: "https://i.pinimg.com/originals/59/54/1d/59541dc46eb5d0d8221721cbbc124c67.png" }}
                 />
                 <Button
                     color='#005c81'
@@ -33,6 +54,8 @@ export default function VisualizaAlunosBanco(props) {
                 />
             </View>
         );
+        }
+        
     }
 
     const separador = () => {
